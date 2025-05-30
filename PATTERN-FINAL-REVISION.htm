@@ -1,0 +1,1400 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PF25 Exam - Final Version</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f7f6;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            min-height: 100vh;
+            direction: ltr;
+        }
+        .container {
+            background-color: #ffffff;
+            padding: 30px 40px;
+            border-radius: 12px;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 900px;
+        }
+        h1, h2 {
+            color: #2c3e50;
+            text-align: center;
+            margin-bottom: 25px;
+        }
+        .section-title {
+            color: #34495e;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 10px;
+            margin-top: 30px;
+            margin-bottom: 20px;
+            font-size: 1.8em;
+            text-align: left;
+        }
+        .question-block {
+            background-color: #ecf0f1;
+            border: 1px solid #dcdcdc;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 25px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+            text-align: left;
+        }
+        .question-text {
+            font-size: 1.15em;
+            color: #2c3e50;
+            margin-bottom: 15px;
+            line-height: 1.6;
+        }
+        .options label {
+            display: block;
+            margin-bottom: 12px;
+            font-size: 1em;
+            color: #34495e;
+            cursor: pointer;
+            padding: 10px 15px;
+            border: 1px solid #c0c0c0;
+            border-radius: 6px;
+            transition: background-color 0.3s ease, border-color 0.3s ease;
+        }
+        .options label:hover {
+            background-color: #e0e6e9;
+            border-color: #999;
+        }
+        .options input[type="radio"] {
+            margin-right: 10px;
+            transform: scale(1.1);
+        }
+        .feedback {
+            margin-top: 10px;
+            font-weight: bold;
+            text-align: center;
+            padding: 8px;
+            border-radius: 5px;
+            display: none;
+            font-size: 0.95em;
+        }
+        .correct {
+            color: #27ae60;
+            background-color: #e6ffee;
+            border: 1px solid #27ae60;
+        }
+        .incorrect {
+            color: #e74c3c;
+            background-color: #ffe6e6;
+            border: 1px solid #e74c3c;
+        }
+        .true-false-options label {
+            display: inline-block;
+            margin-right: 20px;
+            font-size: 1em;
+            color: #34495e;
+            cursor: pointer;
+            padding: 10px 15px;
+            border: 1px solid #c0c0c0;
+            border-radius: 6px;
+            transition: background-color 0.3s ease, border-color 0.3s ease;
+        }
+        .true-false-options label:hover {
+            background-color: #e0e6e9;
+            border-color: #999;
+        }
+        .true-false-options input[type="radio"] {
+            margin-right: 10px;
+            transform: scale(1.1);
+        }
+        #results {
+            margin-top: 40px;
+            padding: 20px;
+            border-top: 2px solid #3498db;
+            text-align: center;
+            font-size: 1.2em;
+            color: #2c3e50;
+        }
+        #results span {
+            font-weight: bold;
+            margin: 0 10px;
+        }
+        .correct-count { color: #27ae60; }
+        .incorrect-count { color: #e74c3c; }
+        
+        /* Custom styles for specific formatting from DOCX */
+        .red-text {
+            color: red;
+        }
+        .blue-text {
+            color: #006FC0; /* Specific blue color from your document */
+        }
+        .bold-underline {
+            font-weight: bold;
+            text-decoration: underline;
+        }
+        .bold-text {
+            font-weight: bold;
+        }
+        .underline-text {
+            text-decoration: underline;
+        }
+        /* Adjusted font sizes based on observation from DOCX */
+        .font-size-10pt { font-size: 13.33px; }
+        .font-size-11pt { font-size: 14.67px; }
+        .font-size-12pt { font-size: 16px; }
+        .font-size-13pt { font-size: 17.33px; }
+        .font-size-16pt { font-size: 21.33px; }
+        .font-size-18pt { font-size: 24px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>PATTERN – FINAL– REVISION</h1>
+        <h2>Part I: MCQ & True or False</h2>
+        
+        <h3 class="section-title">Lecture [7 & 8 & 9]: Principal Component Analysis (PCA)</h3>
+
+        <div class="question-block" data-correct-answer="a">
+            <p class="question-text font-size-13pt">1. As the <span class="bold-text">number</span> of <span class="bold-text">features increases</span>, performance <span class="bold-text">improves</span> until a certain point, after this point, the performance <span class="bold-text">decreases</span>.</p>
+            <div class="options">
+                <label><input type="radio" name="q1" value="a"> a) True</label>
+                <label><input type="radio" name="q1" value="b"> b) False</label>
+            </div>
+            <div class="feedback"></div>
+        </div>
+
+        <div class="question-block" data-correct-answer="c">
+            <p class="question-text font-size-13pt">2. The <span class="bold-text">methods</span> of <span class="bold-text">dimension reduction</span> are </p>
+            <div class="options">
+                <label><input type="radio" name="q2" value="a"> a) feature extraction</label>
+                <label><input type="radio" name="q2" value="b"> b) feature selection</label>
+                <label><input type="radio" name="q2" value="c"> c) both a & b</label>
+                <label><input type="radio" name="q2" value="d"> d) none of them</label>
+            </div>
+            <div class="feedback"></div>
+        </div>
+
+        <div class="question-block" data-correct-answer="a">
+            <p class="question-text font-size-13pt">3. The features are <span class="bold-text">reduced</span> without <span class="bold-text">affecting the important information.</span></p>
+            <div class="options">
+                <label><input type="radio" name="q3" value="a"> a) feature extraction</label>
+                <label><input type="radio" name="q3" value="b"> b) feature selection</label>
+                <label><input type="radio" name="q3" value="c"> c) both a & b</label>
+                <label><input type="radio" name="q3" value="d"> d) none of them</label>
+            </div>
+            <div class="feedback"></div>
+        </div>
+
+        <div class="question-block" data-correct-answer="b">
+            <p class="question-text font-size-13pt">4. The <span class="bold-text">new feature space must be</span> a <span class="bold-text">subset</span> of the <span class="bold-text">old feature space.</span></p>
+            <div class="options">
+                <label><input type="radio" name="q4" value="a"> a) feature extraction</label>
+                <label><input type="radio" name="q4" value="b"> b) feature selection</label>
+                <label><input type="radio" name="q4" value="c"> c) both a & b</label>
+                <label><input type="radio" name="q4" value="d"> d) none of them</label>
+            </div>
+            <div class="feedback"></div>
+        </div>
+
+        <div class="question-block" data-correct-answer="a">
+            <p class="question-text font-size-13pt">5. We can obtain a feature space with a reduced number of features and new values, as in PCA.</p>
+            <div class="options">
+                <label><input type="radio" name="q5" value="a"> a) True</label>
+                <label><input type="radio" name="q5" value="b"> b) False</label>
+            </div>
+            <div class="feedback"></div>
+        </div>
+
+        <div class="question-block" data-correct-answer="a">
+            <p class="question-text font-size-13pt">6. The feature can be neglected if the Variance is small.</p>
+            <div class="options">
+                <label><input type="radio" name="q6" value="a"> a) True</label>
+                <label><input type="radio" name="q6" value="b"> b) False</label>
+            </div>
+            <div class="feedback"></div>
+        </div>
+
+        <div class="question-block" data-correct-answer="a">
+            <p class="question-text font-size-13pt">7. Features with high variance are valuable and should be kept.</p>
+            <div class="options">
+                <label><input type="radio" name="q7" value="a"> a) True</label>
+                <label><input type="radio" name="q7" value="b"> b) False</label>
+            </div>
+            <div class="feedback"></div>
+        </div>
+
+        <div class="question-block" data-correct-answer="a">
+            <p class="question-text font-size-13pt">8. High variance means the data is spread out a lot.</p>
+            <div class="options">
+                <label><input type="radio" name="q8" value="a"> a) True</label>
+                <label><input type="radio" name="q8" value="b"> b) False</label>
+            </div>
+            <div class="feedback"></div>
+        </div>
+
+        <div class="question-block" data-correct-answer="a">
+            <p class="question-text font-size-13pt">9. Low variance means the data is close together.</p>
+            <div class="options">
+                <label><input type="radio" name="q9" value="a"> a) True</label>
+                <label><input type="radio" name="q9" value="b"> b) False</label>
+            </div>
+            <div class="feedback"></div>
+        </div>
+
+        <div class="question-block" data-correct-answer="a">
+            <p class="question-text font-size-13pt">10. Features with high variance often contain more information and are more useful.</p>
+            <div class="options">
+                <label><input type="radio" name="q10" value="a"> a) True</label>
+                <label><input type="radio" name="q10" value="b"> b) False</label>
+            </div>
+            <div class="feedback"></div>
+        </div>
+
+        <div class="question-block" data-correct-answer="a">
+            <p class="question-text font-size-13pt">11. The feature can be neglected if it is linearly correlated with another feature.</p>
+            <div class="options">
+                <label><input type="radio" name="q11" value="a"> a) True</label>
+                <label><input type="radio" name="q11" value="b"> b) False</label>
+            </div>
+            <div class="feedback"></div>
+        </div>
+
+        <div class="question-block" data-correct-answer="a">
+            <p class="question-text font-size-13pt">12. Principal Component Analysis (PCA) is one of the most important algorithms used for dimensionality reduction.</p>
+            <div class="options">
+                <label><input type="radio" name="q12" value="a"> a) True</label>
+                <label><input type="radio" name="q12" value="b"> b) False</label>
+            </div>
+            <div class="feedback"></div>
+        </div>
+
+        <div class="question-block" data-correct-answer="a">
+            <p class="question-text font-size-13pt">13. The transition of the problem from traditional axes to new axes that mimic the distribution of the data based on covariance or correlation between samples.</p>
+            <div class="options">
+                <label><input type="radio" name="q13" value="a"> a) True</label>
+                <label><input type="radio" name="q13" value="b"> b) False</label>
+            </div>
+            <div class="feedback"></div>
+        </div>
+
+        <div class="question-block" data-correct-answer="a">
+            <p class="question-text font-size-13pt">14. The <span class="bold-text">covariance matrix</span> shows the relationship between features.</p>
+            <div class="options">
+                <label><input type="radio" name="q14" value="a"> a) covariance matrix</label>
+                <label><input type="radio" name="q14" value="b"> b) correlation matrix</label>
+                <label><input type="radio" name="q14" value="c"> c) eigen vectors</label>
+                <label><input type="radio" name="q14" value="d"> d) eigen values</label>
+            </div>
+            <div class="feedback"></div>
+        </div>
+
+        <div class="question-block" data-correct-answer="a">
+            <p class="question-text font-size-13pt">15. The covariance matrix shows how each feature varies with respect to the others.</p>
+            <div class="options">
+                <label><input type="radio" name="q15" value="a"> a) True</label>
+                <label><input type="radio" name="q15" value="b"> b) False</label>
+            </div>
+            <div class="feedback"></div>
+        </div>
+
+        <div class="question-block" data-correct-answer="a">
+            <p class="question-text font-size-13pt">16. The covariance matrix C is calculated as <span class="bold-text">𝐶 = 1 / 𝑛 − 1 𝑍𝑇𝑍</span></p>
+            <div class="options">
+                <label><input type="radio" name="q16" value="a"> a) True</label>
+                <label><input type="radio" name="q16" value="b"> b) False</label>
+            </div>
+            <div class="feedback"></div>
+        </div>
+
+        <div class="question-block" data-correct-answer="a">
+            <p class="question-text font-size-13pt">17. If two features increase together (like height and weight), the relationship between them is <span class="bold-text">Strong</span>.</p>
+            <div class="options">
+                <label><input type="radio" name="q17" value="a"> a) Strong</label>
+                <label><input type="radio" name="q17" value="b"> b) Weak</label>
+                <label><input type="radio" name="q17" value="c"> c) Middle</label>
+                <label><input type="radio" name="q17" value="d"> d) None</label>
+            </div>
+            <div class="feedback"></div>
+        </div>
+
+        <div class="question-block" data-correct-answer="b">
+            <p class="question-text font-size-13pt">18. If two features are unrelated (like height and income), the relationship between them is <span class="bold-text">Weak</span>.</p>
+            <div class="options">
+                <label><input type="radio" name="q18" value="a"> a) Strong</label>
+                <label><input type="radio" name="q18" value="b"> b) Weak</label>
+                <label><input type="radio" name="q18" value="c"> c) Middle</label>
+                <label><input type="radio" name="q18" value="d"> d) None</label>
+            </div>
+            <div class="feedback"></div>
+        </div>
+
+        <div class="question-block" data-correct-answer="a">
+            <p class="question-text font-size-13pt">19. Normalization ensures that all features are on the same scale (mean = 0, standard deviation = 1).</p>
+            <div class="options">
+                <label><input type="radio" name="q19" value="a"> a) True</label>
+                <label><input type="radio" name="q19" value="b"> b) False</label>
+            </div>
+            <div class="feedback"></div>
+        </div>
+
+        <div class="question-block" data-correct-answer="a">
+            <p class="question-text font-size-13pt">20. Subtract the mean from each feature and divide by the standard deviation.</p>
+            <div class="options">
+                <label><input type="radio" name="q20" value="a"> a) Normalization the Data</label>
+                <label><input type="radio" name="q20" value="b"> b) Perform Eigenvalue Decomposition.</label>
+                <label><input type="radio" name="q20" value="c"> c) Select Principal Components.</label>
+                <label><input type="radio" name="q20" value="d"> d) Transform the Data.</label>
+            </div>
+            <div class="feedback"></div>
+        </div>
+
+        <div class="question-block" data-correct-answer="a">
+            <p class="question-text font-size-13pt">21. An eigenvector is a special vector that doesn’t change its direction when multiplied by a matrix.</p>
+            <div class="options">
+                <label><input type="radio" name="q21" value="a"> a) True</label>
+                <label><input type="radio" name="q21" value="b"> b) False</label>
+            </div>
+            <div class="feedback"></div>
+        </div>
+
+        <div class="question-block" data-correct-answer="a">
+            <p class="question-text font-size-13pt">22. The eigenvalue (λ) is the factor by which the eigenvector is scaled when multiplied by the matrix.</p>
+            <div class="options">
+                <label><input type="radio" name="q22" value="a"> a) True</label>
+                <label><input type="radio" name="q22" value="b"> b) False</label>
+            </div>
+            <div class="feedback"></div>
+        </div>
+
+        <div class="question-block" data-correct-answer="b">
+            <p class="question-text font-size-13pt">23. If λ=2, the eigenvector is stretched by a factor of <span class="bold-text">2</span>.</p>
+            <div class="options">
+                <label><input type="radio" name="q23" value="a"> a) 0.5</label>
+                <label><input type="radio" name="q23" value="b"> b) 2</label>
+                <label><input type="radio" name="q23" value="c"> c) 4</label>
+                <label><input type="radio" name="q23" value="d"> d) 1</label>
+            </div>
+            <div class="feedback"></div>
+        </div>
+
+        <div class="question-block" data-correct-answer="a">
+            <p class="question-text font-size-13pt">24. If λ=0.5, the eigenvector is shrunk by a factor of <span class="bold-text">0.5</span>.</p>
+            <div class="options">
+                <label><input type="radio" name="q24" value="a"> a) 0.5</label>
+                <label><input type="radio" name="q24" value="b"> b) 2</label>
+                <label><input type="radio" name="q24" value="c"> c) 4</label>
+                <label><input type="radio" name="q24" value="d"> d) 1</label>
+            </div>
+            <div class="feedback"></div>
+        </div>
+
+        <div class="question-block" data-correct-answer="a">
+            <p class="question-text font-size-13pt">25. Eigenvalues and eigenvectors are calculated from the covariance matrix.</p>
+            <div class="options">
+                <label><input type="radio" name="q25" value="a"> a) True</label>
+                <label><input type="radio" name="q25" value="b"> b) False</label>
+            </div>
+            <div class="feedback"></div>
+        </div>
+
+        <div class="question-block" data-correct-answer="a">
+            <p class="question-text font-size-13pt">26. Eigenvectors tell us about the directions in which the data varies the most.</p>
+            <div class="options">
+                <label><input type="radio" name="q26" value="a"> a) True</label>
+                <label><input type="radio" name="q26" value="b"> b) False</label>
+            </div>
+            <div class="feedback"></div>
+        </div>
+
+        <div class="question-block" data-correct-answer="a">
+            <p class="question-text font-size-13pt">27. Eigenvalues tell us how much variance is in each direction (eigenvector).</p>
+            <div class="options">
+                <label><input type="radio" name="q27" value="a"> a) True</label>
+                <label><input type="radio" name="q27" value="b"> b) False</label>
+            </div>
+            <div class="feedback"></div>
+        </div>
+
+        <div class="question-block" data-correct-answer="a">
+            <p class="question-text font-size-13pt">28. A large eigenvalue means that direction is very important (lots of variance).</p>
+            <div class="options">
+                <label><input type="radio" name="q28" value="a"> a) True</label>
+                <label><input type="radio" name="q28" value="b"> b) False</label>
+            </div>
+            <div class="feedback"></div>
+        </div>
+
+        <div class="question-block" data-correct-answer="a">
+            <p class="question-text font-size-13pt">29. A small eigenvalue means that direction is less important (little variance).</p>
+            <div class="options">
+                <label><input type="radio" name="q29" value="a"> a) True</label>
+                <label><input type="radio" name="q29" value="b"> b) False</label>
+            </div>
+            <div class="feedback"></div>
+        </div>
+
+        <h3 class="section-title">Lecture [11 & 12]: Linear Discriminant Analysis (LDA)</h3>
+
+        <div class="question-block" data-correct-answer="a">
+            <p class="question-text font-size-13pt">30. LDA is a method used in pattern recognition to separate different classes of data as clearly as possible.</p>
+            <div class="options">
+                <label><input type="radio" name="q30" value="a"> a) True</label>
+                <label><input type="radio" name="q30" value="b"> b) False</label>
+            </div>
+            <div class="feedback"></div>
+        </div>
+
+        <div class="question-block" data-correct-answer="a">
+            <p class="question-text font-size-13pt">31. LDA is a supervised dimension reduction technique.</p>
+            <div class="options">
+                <label><input type="radio" name="q31" value="a"> a) True</label>
+                <label><input type="radio" name="q31" value="b"> b) False</label>
+            </div>
+            <div class="feedback"></div>
+        </div>
+
+        <div class="question-block" data-correct-answer="c">
+            <p class="question-text font-size-13pt">32. LDA’s job is to </p>
+            <div class="options">
+                <label><input type="radio" name="q32" value="a"> a) Maximize the separation between different classes</label>
+                <label><input type="radio" name="q32" value="b"> b) Minimize the spread within each class</label>
+                <label><input type="radio" name="q32" value="c"> c) Both a & b</label>
+                <label><input type="radio" name="q32" value="d"> d) None of them</label>
+            </div>
+            <div class="feedback"></div>
+        </div>
+
+        <div class="question-block" data-correct-answer="a">
+            <p class="question-text font-size-13pt">33. LDA makes classification easier and more accurate.</p>
+            <div class="options">
+                <label><input type="radio" name="q33" value="a"> a) True</label>
+                <label><input type="radio" name="q33" value="b"> b) False</label>
+            </div>
+            <div class="feedback"></div>
+        </div>
+
+        <div class="question-block" data-correct-answer="a">
+            <p class="question-text font-size-13pt">34. LDA thinks about data as points in space.</p>
+            <div class="options">
+                <label><input type="radio" name="q34" value="a"> a) True</label>
+                <label><input type="radio" name="q34" value="b"> b) False</label>
+            </div>
+            <div class="feedback"></div>
+        </div>
+
+        <div class="question-block" data-correct-answer="a">
+            <p class="question-text font-size-13pt">35. LDA works by finding a balance between two things.</p>
+            <div class="options">
+                <label><input type="radio" name="q35" value="a"> a) True</label>
+                <label><input type="radio" name="q35" value="b"> b) False</label>
+            </div>
+            <div class="feedback"></div>
+        </div>
+
+        <div class="question-block" data-correct-answer="c">
+            <p class="question-text font-size-13pt">36. LDA works by finding a balance between </p>
+            <div class="options">
+                <label><input type="radio" name="q36" value="a"> a) Between-class scatter</label>
+                <label><input type="radio" name="q36" value="b"> b) Within-class scatter</label>
+                <label><input type="radio" name="q36" value="c"> c) Both a & b</label>
+                <label><input type="radio" name="q36" value="d"> d) None of them</label>
+            </div>
+            <div class="feedback"></div>
+        </div>
+
+        <div class="question-block" data-correct-answer="a">
+            <p class="question-text font-size-13pt">37. How far apart the classes are (we want this to be big).</p>
+            <div class="options">
+                <label><input type="radio" name="q37" value="a"> a) Between-class scatter</label>
+                <label><input type="radio" name="q37" value="b"> b) Within-class scatter</label>
+                <label><input type="radio" name="q37" value="c"> c) Both a &b</label>
+                <label><input type="radio" name="q37" value="d"> d) None of them</label>
+            </div>
+            <div class="feedback"></div>
+        </div>
+
+        <div class="question-block" data-correct-answer="b">
+            <p class="question-text font-size-13pt">38. How spread out the points are within each class (we want this to be small).</p>
+            <div class="options">
+                <label><input type="radio" name="q38" value="a"> a) Between-class scatter</label>
+                <label><input type="radio" name="q38" value="b"> b) Within-class scatter</label>
+                <label><input type="radio" name="q38" value="c"> c) Both a &b</label>
+                <label><input type="radio" name="q38" value="d"> d) None of them</label>
+            </div>
+            <div class="feedback"></div>
+        </div>
+
+        <div class="question-block" data-correct-answer="h">
+            <p class="question-text font-size-13pt">39. How Does LDA Work? / What are the steps of LDA?</p>
+            <div class="options">
+                <label><input type="radio" name="q39" value="a"> a) Step 1: Understand Your Data</label>
+                <label><input type="radio" name="q39" value="b"> b) Step 2: Compute the Mean for Each Class</label>
+                <label><input type="radio" name="q39" value="c"> c) Step 3: Measure the Spread Within Classes (Within-Class Scatter)</label>
+                <label><input type="radio" name="q39" value="d"> d) Step 4: Measure the Separation Between Classes (Between-Class Scatter)</label>
+                <label><input type="radio" name="q39" value="e"> e) Step 5: Find the Best Direction</label>
+                <label><input type="radio" name="q39" value="f"> f) Step 6: Project the Data</label>
+                <label><input type="radio" name="q39" value="g"> g) Step 7: Classify New Data</label>
+                <label><input type="radio" name="q39" value="h"> h) All of the above</label>
+            </div>
+            <div class="feedback"></div>
+        </div>
+
+        <div class="question-block" data-correct-answer="a">
+            <p class="question-text font-size-13pt">40. LDA applied to a forensic problem.</p>
+            <div class="options">
+                <label><input type="radio" name="q40" value="a"> a) True</label>
+                <label><input type="radio" name="q40" value="b"> b) False</label>
+            </div>
+            <div class="feedback"></div>
+        </div>
+
+        <h3 class="section-title">Lecture [13]: Bayesian Decision Theory</h3>
+
+        <div class="question-block" data-correct-answer="c">
+            <p class="question-text font-size-13pt">41. Bayesian Decision Theory combines </p>
+            <div class="options">
+                <label><input type="radio" name="q41" value="a"> a) Prior knowledge (initial class probabilities)</label>
+                <label><input type="radio" name="q41" value="b"> b) Observed data (features) to compute posterior probabilities for optimal classification.</label>
+                <label><input type="radio" name="q41" value="c"> c) Both a & b</label>
+                <label><input type="radio" name="q41" value="d"> d) None of the above</label>
+            </div>
+            <div class="feedback"></div>
+        </div>
+
+        <div class="question-block" data-correct-answer="a">
+            <p class="question-text font-size-13pt">42. Bayesian Decision Theory provides a probabilistic framework for minimizing classification error.</p>
+            <div class="options">
+                <label><input type="radio" name="q42" value="a"> a) True</label>
+                <label><input type="radio" name="q42" value="b"> b) False</label>
+            </div>
+            <div class="feedback"></div>
+        </div>
+
+        <div class="question-block" data-correct-answer="f">
+            <p class="question-text font-size-13pt">43. The components of Bayesian Decision Theory are</p>
+            <div class="options">
+                <label><input type="radio" name="q43" value="a"> a) Prior probability P(ωi)</label>
+                <label><input type="radio" name="q43" value="b"> b) Likelihood P(x∣ωi)</label>
+                <label><input type="radio" name="q43" value="c"> c) Evidence P(x)</label>
+                <label><input type="radio" name="q43" value="d"> d) Posterior probability P(ωi∣x)</label>
+                <label><input type="radio" name="q43" value="e"> e) Bayes Decision Rule</label>
+                <label><input type="radio" name="q43" value="f"> f) All of the above</label>
+            </div>
+            <div class="feedback"></div>
+        </div>
+
+        <div class="question-block" data-correct-answer="a">
+            <p class="question-text font-size-13pt">44. Initial belief about class ωi before seeing data.</p>
+            <div class="options">
+                <label><input type="radio" name="q44" value="a"> a) Prior probability P(ωi)</label>
+                <label><input type="radio" name="q44" value="b"> b) Likelihood P(x∣ωi)</label>
+                <label><input type="radio" name="q44" value="c"> c) Evidence P(x)</label>
+                <label><input type="radio" name="q44" value="d"> d) Posterior probability P(ωi∣x)</label>
+            </div>
+            <div class="feedback"></div>
+        </div>
+
+        <div class="question-block" data-correct-answer="b">
+            <p class="question-text font-size-13pt">45. Probability of observing feature x given class ωi.</p>
+            <div class="options">
+                <label><input type="radio" name="q45" value="a"> a) Prior probability P(ωi)</label>
+                <label><input type="radio" name="q45" value="b"> b) Likelihood P(x∣ωi)</label>
+                <label><input type="radio" name="q45" value="c"> c) Evidence P(x)</label>
+                <label><input type="radio" name="q45" value="d"> d) Posterior probability P(ωi∣x)</label>
+            </div>
+            <div class="feedback"></div>
+        </div>
+
+        <div class="question-block" data-correct-answer="c">
+            <p class="question-text font-size-13pt">46. Total probability of observing x across all classes (normalization term).</p>
+            <div class="options">
+                <label><input type="radio" name="q46" value="a"> a) Prior probability P(ωi)</label>
+                <label><input type="radio" name="q46" value="b"> b) Likelihood P(x∣ωi)</label>
+                <label><input type="radio" name="q46" value="c"> c) Evidence P(x)</label>
+                <label><input type="radio" name="q46" value="d"> d) Posterior probability P(ωi∣x)</label>
+            </div>
+            <div class="feedback"></div>
+        </div>
+
+        <div class="question-block" data-correct-answer="d">
+            <p class="question-text font-size-13pt">47. Updated probability of class ωi after observing x.</p>
+            <div class="options">
+                <label><input type="radio" name="q47" value="a"> a) Prior probability P(ωi)</label>
+                <label><input type="radio" name="q47" value="b"> b) Likelihood P(x∣ωi)</label>
+                <label><input type="radio" name="q47" value="c"> c) Evidence P(x)</label>
+                <label><input type="radio" name="q47" value="d"> d) Posterior probability P(ωi∣x)</label>
+            </div>
+            <div class="feedback"></div>
+        </div>
+
+        <div class="question-block" data-correct-answer="a">
+            <p class="question-text font-size-13pt">48. We choose ω1 if P(ω1 ∣ x) > P(ω2 ∣ x), else ω2.</p>
+            <div class="options">
+                <label><input type="radio" name="q48" value="a"> a) True</label>
+                <label><input type="radio" name="q48" value="b"> b) False</label>
+            </div>
+            <div class="feedback"></div>
+        </div>
+
+        <h3 class="section-title">Lecture [14]: Scale-Invariant Feature Transform (SIFT)</h3>
+
+        <div class="question-block" data-correct-answer="a">
+            <p class="question-text font-size-13pt">49. Computer Vision is a subset of pattern recognition that focuses on teaching computers to "see" and understand images or videos, just like humans do.</p>
+            <div class="options">
+                <label><input type="radio" name="q49" value="a"> a) True</label>
+                <label><input type="radio" name="q49" value="b"> b) False</label>
+            </div>
+            <div class="feedback"></div>
+        </div>
+
+        <div class="question-block" data-correct-answer="b">
+            <p class="question-text font-size-13pt">50. Computer vision tries to make computers do the same by analyzing the pixels in the image.</p>
+            <div class="options">
+                <label><input type="radio" name="q50" value="a"> a) True</label>
+                <label><input type="radio" name="q50" value="b"> b) False</label>
+            </div>
+            <div class="feedback"></div>
+        </div>
+
+        <div class="question-block" data-correct-answer="a">
+            <p class="question-text font-size-13pt">51. Scale-Invariant Feature Transform (SIFT) is a method in computer vision that detects and describes key points (important points) in an image.</p>
+            <div class="options">
+                <label><input type="radio" name="q51" value="a"> a) True</label>
+                <label><input type="radio" name="q51" value="b"> b) False</label>
+            </div>
+            <div class="feedback"></div>
+        </div>
+
+        <div class="question-block" data-correct-answer="b">
+            <p class="question-text font-size-13pt">52. SIFT is an algorithm that detects and matches the features of an image.</p>
+            <div class="options">
+                <label><input type="radio" name="q52" value="a"> a) True</label>
+                <label><input type="radio" name="q52" value="b"> b) False</label>
+            </div>
+            <div class="feedback"></div>
+        </div>
+
+        <div class="question-block" data-correct-answer="a">
+            <p class="question-text font-size-13pt">53. The main idea behind SIFT is to extract key points (features) from a set of reference images and store them in a database.</p>
+            <div class="options">
+                <label><input type="radio" name="q53" value="a"> a) True</label>
+                <label><input type="radio" name="q53" value="b"> b) False</label>
+            </div>
+            <div class="feedback"></div>
+        </div>
+
+        <div class="question-block" data-correct-answer="e">
+            <p class="question-text font-size-13pt">54. SIFT is used in many applications, like </p>
+            <div class="options">
+                <label><input type="radio" name="q54" value="a"> a) Image Matching</label>
+                <label><input type="radio" name="q54" value="b"> b) Object Recognition</label>
+                <label><input type="radio" name="q54" value="c"> c) 3D Reconstruction</label>
+                <label><input type="radio" name="q54" value="d"> d) Forensics</label>
+                <label><input type="radio" name="q54" value="e"> e) All of the above</label>
+            </div>
+            <div class="feedback"></div>
+        </div>
+
+        <div class="question-block" data-correct-answer="a">
+            <p class="question-text font-size-13pt">55. Finding the same object in two different images.</p>
+            <div class="options">
+                <label><input type="radio" name="q55" value="a"> a) Image Matching</label>
+                <label><input type="radio" name="q55" value="b"> b) Object Recognition</label>
+                <label><input type="radio" name="q55" value="c"> c) 3D Reconstruction</label>
+                <label><input type="radio" name="q55" value="d"> d) Forensics</label>
+            </div>
+            <div class="feedback"></div>
+        </div>
+
+        <div class="question-block" data-correct-answer="b">
+            <p class="question-text font-size-13pt">56. Identifying objects in photos or videos.</p>
+            <div class="options">
+                <label><input type="radio" name="q56" value="a"> a) Image Matching</label>
+                <label><input type="radio" name="q56" value="b"> b) Object Recognition</label>
+                <label><input type="radio" name="q56" value="c"> c) 3D Reconstruction</label>
+                <label><input type="radio" name="q56" value="d"> d) Forensics</label>
+            </div>
+            <div class="feedback"></div>
+        </div>
+
+        <div class="question-block" data-correct-answer="c">
+            <p class="question-text font-size-13pt">57. Building 3D models from multiple 2D images.</p>
+            <div class="options">
+                <label><input type="radio" name="q57" value="a"> a) Image Matching</label>
+                <label><input type="radio" name="q57" value="b"> b) Object Recognition</label>
+                <label><input type="radio" name="q57" value="c"> c) 3D Reconstruction</label>
+                <label><input type="radio" name="q57" value="d"> d) Forensics</label>
+            </div>
+            <div class="feedback"></div>
+        </div>
+
+        <div class="question-block" data-correct-answer="d">
+            <p class="question-text font-size-13pt">58. Matching fingerprints, shoe prints, or other evidence.</p>
+            <div class="options">
+                <label><input type="radio" name="q58" value="a"> a) Image Matching</label>
+                <label><input type="radio" name="q58" value="b"> b) Object Recognition</label>
+                <label><input type="radio" name="q58" value="c"> c) 3D Reconstruction</label>
+                <label><input type="radio" name="q58" value="d"> d) Forensics</label>
+            </div>
+            <div class="feedback"></div>
+        </div>
+
+        <div class="question-block" data-correct-answer="a">
+            <p class="question-text font-size-13pt">59. SIFT has four main steps to detect and describe key points in an image.</p>
+            <div class="options">
+                <label><input type="radio" name="q59" value="a"> a) True</label>
+                <label><input type="radio" name="q59" value="b"> b) False</label>
+            </div>
+            <div class="feedback"></div>
+        </div>
+
+        <div class="question-block" data-correct-answer="d">
+            <p class="question-text font-size-13pt">60. The steps of SIFT to detect and describe key points in an image are </p>
+            <div class="options">
+                <label><input type="radio" name="q60" value="a"> a) I & II</label>
+                <label><input type="radio" name="q60" value="b"> b) II & III</label>
+                <label><input type="radio" name="q60" value="c"> c) I & IV</label>
+                <label><input type="radio" name="q60" value="d"> d) I & II & III & IV</label>
+            </div>
+            <div class="feedback"></div>
+        </div>
+
+        <div class="question-block" data-correct-answer="a">
+            <p class="question-text font-size-13pt">61. Blurring helps SIFT focus on the big, important features (like edges or corners) and ignore small details (like noise or tiny textures).</p>
+            <div class="options">
+                <label><input type="radio" name="q61" value="a"> a) True</label>
+                <label><input type="radio" name="q61" value="b"> b) False</label>
+            </div>
+            <div class="feedback"></div>
+        </div>
+
+        <div class="question-block" data-correct-answer="b">
+            <p class="question-text font-size-13pt">62. Not all key points candidates are good enough.</p>
+            <div class="options">
+                <label><input type="radio" name="q62" value="a"> a) True</label>
+                <label><input type="radio" name="q62" value="b"> b) False</label>
+            </div>
+            <div class="feedback"></div>
+        </div>
+
+        <h3 class="section-title">Lecture [15 & 16]: Feature Selection Techniques</h3>
+
+        <div class="question-block" data-correct-answer="a">
+            <p class="question-text font-size-13pt">63. Feature selection is the process of selecting a subset of relevant features from the original set of features in a dataset.</p>
+            <div class="options">
+                <label><input type="radio" name="q63" value="a"> a) True</label>
+                <label><input type="radio" name="q63" value="b"> b) False</label>
+            </div>
+            <div class="feedback"></div>
+        </div>
+
+        <div class="question-block" data-correct-answer="a">
+            <p class="question-text font-size-13pt">64. It is a critical step in data preprocessing, especially for high-dimensional data.</p>
+            <div class="options">
+                <label><input type="radio" name="q64" value="a"> a) Feature selection</label>
+                <label><input type="radio" name="q64" value="b"> b) Feature Extraction</label>
+                <label><input type="radio" name="q64" value="c"> c) Both a & b</label>
+                <label><input type="radio" name="q64" value="d"> d) None of them</label>
+            </div>
+            <div class="feedback"></div>
+        </div>
+
+        <div class="question-block" data-correct-answer="d">
+            <p class="question-text font-size-13pt">65. The Importance of Feature Selection is</p>
+            <div class="options">
+                <label><input type="radio" name="q65" value="a"> a) Dimensionality Reduction</label>
+                <label><input type="radio" name="q65" value="b"> b) Noise Reduction</label>
+                <label><input type="radio" name="q65" value="c"> c) Improved Model Performance</label>
+                <label><input type="radio" name="q65" value="d"> d) All of the above</label>
+            </div>
+            <div class="feedback"></div>
+        </div>
+
+        <div class="question-block" data-correct-answer="a">
+            <p class="question-text font-size-13pt">66. Reduces the number of variables, making the data easier to work with.</p>
+            <div class="options">
+                <label><input type="radio" name="q66" value="a"> a) Dimensionality Reduction</label>
+                <label><input type="radio" name="q66" value="b"> b) Noise Reduction</label>
+                <label><input type="radio" name="q66" value="c"> c) Improved Model Performance</label>
+                <label><input type="radio" name="q66" value="d"> d) All of the above</label>
+            </div>
+            <div class="feedback"></div>
+        </div>
+
+        <div class="question-block" data-correct-answer="c">
+            <p class="question-text font-size-13pt">67. Removes irrelevant or redundant features, improving model performance.</p>
+            <div class="options">
+                <label><input type="radio" name="q67" value="a"> a) Dimensionality Reduction</label>
+                <label><input type="radio" name="q67" value="b"> b) Noise Reduction</label>
+                <label><input type="radio" name="q67" value="c"> c) Improved Model Performance</label>
+                <label><input type="radio" name="q67" value="d"> d) All of the above</label>
+            </div>
+            <div class="feedback"></div>
+        </div>
+
+        <div class="question-block" data-correct-answer="c">
+            <p class="question-text font-size-13pt">68. Feature selection techniques can be broadly categorized into </p>
+            <div class="options">
+                <label><input type="radio" name="q68" value="a"> a) Filter Methods</label>
+                <label><input type="radio" name="q68" value="b"> b) Wrapper Methods</label>
+                <label><input type="radio" name="q68" value="c"> c) Both a & b</label>
+                <label><input type="radio" name="q68" value="d"> d) None of them</label>
+            </div>
+            <div class="feedback"></div>
+        </div>
+
+        <div class="question-block" data-correct-answer="a">
+            <p class="question-text font-size-13pt">69. Select features based on statistical measures.</p>
+            <div class="options">
+                <label><input type="radio" name="q69" value="a"> a) Filter Methods</label>
+                <label><input type="radio" name="q69" value="b"> b) Wrapper Methods</label>
+                <label><input type="radio" name="q69" value="c"> c) Both a & b</label>
+                <label><input type="radio" name="q69" value="d"> d) None of them</label>
+            </div>
+            <div class="feedback"></div>
+        </div>
+
+        <div class="question-block" data-correct-answer="b">
+            <p class="question-text font-size-13pt">70. Select features based on model performance.</p>
+            <div class="options">
+                <label><input type="radio" name="q70" value="a"> a) Filter Methods</label>
+                <label><input type="radio" name="q70" value="b"> b) Wrapper Methods</label>
+                <label><input type="radio" name="q70" value="c"> c) Both a & b</label>
+                <label><input type="radio" name="q70" value="d"> d) None of them</label>
+            </div>
+            <div class="feedback"></div>
+        </div>
+
+        <div class="question-block" data-correct-answer="d">
+            <p class="question-text font-size-13pt">71. The Filter Methods can be solved by using </p>
+            <div class="options">
+                <label><input type="radio" name="q71" value="a"> a) Variance Threshold</label>
+                <label><input type="radio" name="q71" value="b"> b) Correlation Coefficient</label>
+                <label><input type="radio" name="q71" value="c"> c) Mutual Information</label>
+                <label><input type="radio" name="q71" value="d"> d) All of the above</label>
+            </div>
+            <div class="feedback"></div>
+        </div>
+
+        <div class="question-block" data-correct-answer="a">
+            <p class="question-text font-size-13pt">72. Remove features with low variance.</p>
+            <div class="options">
+                <label><input type="radio" name="q72" value="a"> a) Variance Threshold</label>
+                <label><input type="radio" name="q72" value="b"> b) Correlation Coefficient</label>
+                <label><input type="radio" name="q72" value="c"> c) Mutual Information</label>
+                <label><input type="radio" name="q72" value="d"> d) All of the above</label>
+            </div>
+            <div class="feedback"></div>
+        </div>
+
+        <div class="question-block" data-correct-answer="b">
+            <p class="question-text font-size-13pt">73. Select features highly correlated with the target variable.</p>
+            <div class="options">
+                <label><input type="radio" name="q73" value="a"> a) Variance Threshold</label>
+                <label><input type="radio" name="q73" value="b"> b) Correlation Coefficient</label>
+                <label><input type="radio" name="q73" value="c"> c) Mutual Information</label>
+                <label><input type="radio" name="q73" value="d"> d) All of the above</label>
+            </div>
+            <div class="feedback"></div>
+        </div>
+
+        <div class="question-block" data-correct-answer="c">
+            <p class="question-text font-size-13pt">74. Measure the dependency between features and the target variable.</p>
+            <div class="options">
+                <label><input type="radio" name="q74" value="a"> a) Variance Threshold</label>
+                <label><input type="radio" name="q74" value="b"> b) Correlation Coefficient</label>
+                <label><input type="radio" name="q74" value="c"> c) Mutual Information</label>
+                <label><input type="radio" name="q74" value="d"> d) All of the above</label>
+            </div>
+            <div class="feedback"></div>
+        </div>
+
+        <div class="question-block" data-correct-answer="d">
+            <p class="question-text font-size-13pt">75. Wrapper methods can be solved by using</p>
+            <div class="options">
+                <label><input type="radio" name="q75" value="a"> a) Forward Selection</label>
+                <label><input type="radio" name="q75" value="b"> b) Backward Elimination</label>
+                <label><input type="radio" name="q75" value="c"> c) Recursive Feature Elimination (RFE)</label>
+                <label><input type="radio" name="q75" value="d"> d) All of the above</label>
+            </div>
+            <div class="feedback"></div>
+        </div>
+
+        <div class="question-block" data-correct-answer="a">
+            <p class="question-text font-size-13pt">76. Start with no features and add one at a time.</p>
+            <div class="options">
+                <label><input type="radio" name="q76" value="a"> a) Forward Selection</label>
+                <label><input type="radio" name="q76" value="b"> b) Backward Elimination</label>
+                <label><input type="radio" name="q76" value="c"> c) Recursive Feature Elimination (RFE)</label>
+                <label><input type="radio" name="q76" value="d"> d) All of the above</label>
+            </div>
+            <div class="feedback"></div>
+        </div>
+
+        <div class="question-block" data-correct-answer="b">
+            <p class="question-text font-size-13pt">77. Start with all features and remove one at a time.</p>
+            <div class="options">
+                <label><input type="radio" name="q77" value="a"> a) Forward Selection</label>
+                <label><input type="radio" name="q77" value="b"> b) Backward Elimination</label>
+                <label><input type="radio" name="q77" value="c"> c) Recursive Feature Elimination (RFE)</label>
+                <label><input type="radio" name="q77" value="d"> d) All of the above</label>
+            </div>
+            <div class="feedback"></div>
+        </div>
+
+        <div class="question-block" data-correct-answer="c">
+            <p class="question-text font-size-13pt">78. Recursively remove the least important features.</p>
+            <div class="options">
+                <label><input type="radio" name="q78" value="a"> a) Forward Selection</label>
+                <label><input type="radio" name="q78" value="b"> b) Backward Elimination</label>
+                <label><input type="radio" name="q78" value="c"> c) Recursive Feature Elimination (RFE)</label>
+                <label><input type="radio" name="q78" value="d"> d) All of the above</label>
+            </div>
+            <div class="feedback"></div>
+        </div>
+
+        <div class="question-block" data-correct-answer="a">
+            <p class="question-text font-size-13pt">79. Correlation coefficient has range from -1 to 1.</p>
+            <div class="options">
+                <label><input type="radio" name="q79" value="a"> a) True</label>
+                <label><input type="radio" name="q79" value="b"> b) False</label>
+            </div>
+            <div class="feedback"></div>
+        </div>
+
+        <h3 class="section-title">Lecture [17]: Similarity Measures</h3>
+
+        <div class="question-block" data-correct-answer="a">
+            <p class="question-text font-size-13pt">80. Similarity measures is a mathematical way to quantify how alike two objects are.</p>
+            <div class="options">
+                <label><input type="radio" name="q80" value="a"> a) True</label>
+                <label><input type="radio" name="q80" value="b"> b) False</label>
+            </div>
+            <div class="feedback"></div>
+        </div>
+
+        <div class="question-block" data-correct-answer="a">
+            <p class="question-text font-size-13pt">81. Similarity measures are used in many applications, like recommending movies, clustering similar news articles, or even detecting plagiarism in essays.</p>
+            <div class="options">
+                <label><input type="radio" name="q81" value="a"> a) True</label>
+                <label><input type="radio" name="q81" value="b"> b) False</label>
+            </div>
+            <div class="feedback"></div>
+        </div>
+
+        <div class="question-block" data-correct-answer="e">
+            <p class="question-text font-size-13pt">82. Similarity measures are critical in </p>
+            <div class="options">
+                <label><input type="radio" name="q82" value="a"> a) Clustering</label>
+                <label><input type="radio" name="q82" value="b"> b) Classification</label>
+                <label><input type="radio" name="q82" value="c"> c) Information Retrieval</label>
+                <label><input type="radio" name="q82" value="d"> d) Natural Language Processing</label>
+                <label><input type="radio" name="q82" value="e"> e) All of the above</label>
+            </div>
+            <div class="feedback"></div>
+        </div>
+
+        <div class="question-block" data-correct-answer="a">
+            <p class="question-text font-size-13pt">83. Grouping similar items together, like organizing photos by content.</p>
+            <div class="options">
+                <label><input type="radio" name="q83" value="a"> a) Clustering</label>
+                <label><input type="radio" name="q83" value="b"> b) Classification</label>
+                <label><input type="radio" name="q83" value="c"> c) Information Retrieval</label>
+                <label><input type="radio" name="q83" value="d"> d) Language Processing</label>
+            </div>
+            <div class="feedback"></div>
+        </div>
+
+        <div class="question-block" data-correct-answer="b">
+            <p class="question-text font-size-13pt">84. Identifying which category an item belongs to, based on its similarity to known examples.</p>
+            <div class="options">
+                <label><input type="radio" name="q84" value="a"> a) Clustering</label>
+                <label><input type="radio" name="q84" value="b"> b) Classification</label>
+                <label><input type="radio" name="q84" value="c"> c) Information Retrieval</label>
+                <label><input type="radio" name="q84" value="d"> d) Natural Language Processing</label>
+            </div>
+            <div class="feedback"></div>
+        </div>
+
+        <div class="question-block" data-correct-answer="c">
+            <p class="question-text font-size-13pt">85. Finding relevant documents or web pages for a search query.</p>
+            <div class="options">
+                <label><input type="radio" name="q85" value="a"> a) Clustering</label>
+                <label><input type="radio" name="q85" value="b"> b) Classification</label>
+                <label><input type="radio" name="q85" value="c"> c) Information Retrieval</label>
+                <label><input type="radio" name="q85" value="d"> d) Natural Language Processing</label>
+            </div>
+            <div class="feedback"></div>
+        </div>
+
+        <div class="question-block" data-correct-answer="d">
+            <p class="question-text font-size-13pt">86. Comparing texts, like checking if two reviews express similar sentiments.</p>
+            <div class="options">
+                <label><input type="radio" name="q86" value="a"> a) Clustering</label>
+                <label><input type="radio" name="q86" value="b"> b) Classification</label>
+                <label><input type="radio" name="q86" value="c"> c) Information Retrieval</label>
+                <label><input type="radio" name="q86" value="d"> d) Natural Language Processing</label>
+            </div>
+            <div class="feedback"></div>
+        </div>
+
+        <div class="question-block" data-correct-answer="a">
+            <p class="question-text font-size-13pt">87. There are three types of the most widely used similarity measures.</p>
+            <div class="options">
+                <label><input type="radio" name="q87" value="a"> a) True</label>
+                <label><input type="radio" name="q87" value="b"> b) False</label>
+            </div>
+            <div class="feedback"></div>
+        </div>
+
+        <div class="question-block" data-correct-answer="d">
+            <p class="question-text font-size-13pt">88. The types of similarity measures used are </p>
+            <div class="options">
+                <label><input type="radio" name="q88" value="a"> a) Euclidean Distance.</label>
+                <label><input type="radio" name="q88" value="b"> b) Cosine Similarity.</label>
+                <label><input type="radio" name="q88" value="c"> c) Jaccard Similarity.</label>
+                <label><input type="radio" name="q88" value="d"> d) All of the above</label>
+            </div>
+            <div class="feedback"></div>
+        </div>
+
+        <div class="question-block" data-correct-answer="c">
+            <p class="question-text font-size-13pt">89. Similarity measures depend on</p>
+            <div class="options">
+                <label><input type="radio" name="q89" value="a"> a) the type of data you’re working with (numbers, text, or images)</label>
+                <label><input type="radio" name="q89" value="b"> b) the problem you’re trying to solve.</label>
+                <label><input type="radio" name="q89" value="c"> c) Both a & b</label>
+                <label><input type="radio" name="q89" value="d"> d) None of them</label>
+            </div>
+            <div class="feedback"></div>
+        </div>
+
+        <div class="question-block" data-correct-answer="a">
+            <p class="question-text font-size-13pt">90. Euclidean Distance is like a straight-line distance between two points in space.</p>
+            <div class="options">
+                <label><input type="radio" name="q90" value="a"> a) True</label>
+                <label><input type="radio" name="q90" value="b"> b) False</label>
+            </div>
+            <div class="feedback"></div>
+        </div>
+
+        <div class="question-block" data-correct-answer="c">
+            <p class="question-text font-size-13pt">91. Euclidean Distance works best when</p>
+            <div class="options">
+                <label><input type="radio" name="q91" value="a"> a) Your data is numerical.</label>
+                <label><input type="radio" name="q91" value="b"> b) The features are on the same scale.</label>
+                <label><input type="radio" name="q91" value="c"> c) Both a & b</label>
+                <label><input type="radio" name="q91" value="d"> d) None of them</label>
+            </div>
+            <div class="feedback"></div>
+        </div>
+
+        <div class="question-block" data-correct-answer="b">
+            <p class="question-text font-size-13pt">92. It is one of the most popular similarity measures, especially in text analysis and NLP.</p>
+            <div class="options">
+                <label><input type="radio" name="q92" value="a"> a) Euclidean Distance.</label>
+                <label><input type="radio" name="q92" value="b"> b) Cosine Similarity.</label>
+                <label><input type="radio" name="q92" value="c"> c) Jaccard Similarity.</label>
+                <label><input type="radio" name="q92" value="d"> d) All of the above</label>
+            </div>
+            <div class="feedback"></div>
+        </div>
+
+        <div class="question-block" data-correct-answer="a">
+            <p class="question-text font-size-13pt">93. Euclidean Distance focuses on the magnitude of differences.</p>
+            <div class="options">
+                <label><input type="radio" name="q93" value="a"> a) True</label>
+                <label><input type="radio" name="q93" value="b"> b) False</label>
+            </div>
+            <div class="feedback"></div>
+        </div>
+
+        <div class="question-block" data-correct-answer="a">
+            <p class="question-text font-size-13pt">94. Cosine Similarity focuses on the direction of the data.</p>
+            <div class="options">
+                <label><input type="radio" name="q94" value="a"> a) True</label>
+                <label><input type="radio" name="q94" value="b"> b) False</label>
+            </div>
+            <div class="feedback"></div>
+        </div>
+
+        <div class="question-block" data-correct-answer="a">
+            <p class="question-text font-size-13pt">95. In cosine similarity, if the angle is small (close to 0 degrees), the reviews are similar.</p>
+            <div class="options">
+                <label><input type="radio" name="q95" value="a"> a) True</label>
+                <label><input type="radio" name="q95" value="b"> b) False</label>
+            </div>
+            <div class="feedback"></div>
+        </div>
+
+        <div class="question-block" data-correct-answer="a">
+            <p class="question-text font-size-13pt">96. In cosine similarity, if the angle is large (close to 90 degrees or more), they’re different.</p>
+            <div class="options">
+                <label><input type="radio" name="q96" value="a"> a) True</label>
+                <label><input type="radio" name="q96" value="b"> b) False</label>
+            </div>
+            <div class="feedback"></div>
+        </div>
+
+        <div class="question-block" data-correct-answer="d">
+            <p class="question-text font-size-13pt">97. Cosine Similarity is ideal when</p>
+            <div class="options">
+                <label><input type="radio" name="q97" value="a"> a) You’re working with text data</label>
+                <label><input type="radio" name="q97" value="b"> b) The magnitude of the vectors isn’t important</label>
+                <label><input type="radio" name="q97" value="c"> c) You’re dealing with high-dimensional data</label>
+                <label><input type="radio" name="q97" value="d"> d) All of the above</label>
+            </div>
+            <div class="feedback"></div>
+        </div>
+
+        <div class="question-block" data-correct-answer="a">
+            <p class="question-text font-size-13pt">98. Cosine Similarity is less affected by the “curse of dimensionality”.</p>
+            <div class="options">
+                <label><input type="radio" name="q98" value="a"> a) True</label>
+                <label><input type="radio" name="q98" value="b"> b) False</label>
+            </div>
+            <div class="feedback"></div>
+        </div>
+
+        <div class="question-block" data-correct-answer="a">
+            <p class="question-text font-size-13pt">99. Cosine Similarity doesn’t account for the actual values of the features.</p>
+            <div class="options">
+                <label><input type="radio" name="q99" value="a"> a) True</label>
+                <label><input type="radio" name="q99" value="b"> b) False</label>
+            </div>
+            <div class="feedback"></div>
+        </div>
+
+        <div class="question-block" data-correct-answer="c">
+            <p class="question-text font-size-13pt">100. It is a simple measure used when you’re comparing sets of items.</p>
+            <div class="options">
+                <label><input type="radio" name="q100" value="a"> a) Euclidean Distance.</label>
+                <label><input type="radio" name="q100" value="b"> b) Cosine Similarity.</label>
+                <label><input type="radio" name="q100" value="c"> c) Jaccard Similarity.</label>
+                <label><input type="radio" name="q100" value="d"> d) All of the above</label>
+            </div>
+            <div class="feedback"></div>
+        </div>
+
+        <div class="question-block" data-correct-answer="a">
+            <p class="question-text font-size-13pt">101. Jaccard Similarity is particularly useful when your data is binary.</p>
+            <div class="options">
+                <label><input type="radio" name="q101" value="a"> a) True</label>
+                <label><input type="radio" name="q101" value="b"> b) False</label>
+            </div>
+            <div class="feedback"></div>
+        </div>
+
+        <div class="question-block" data-correct-answer="c">
+            <p class="question-text font-size-13pt">102. Jaccard Similarity is great when</p>
+            <div class="options">
+                <label><input type="radio" name="q102" value="a"> a) You’re comparing sets or binary data.</label>
+                <label><input type="radio" name="q102" value="b"> b) The order or frequency of items doesn’t matter.</label>
+                <label><input type="radio" name="q102" value="c"> c) Both a & b</label>
+                <label><input type="radio" name="q102" value="d"> d) None of them</label>
+            </div>
+            <div class="feedback"></div>
+        </div>
+
+        <div class="question-block" data-correct-answer="a">
+            <p class="question-text font-size-13pt">103. Finding the distance between two points with </p>
+            <div class="options">
+                <label><input type="radio" name="q103" value="a"> a) Euclidean Distance.</label>
+                <label><input type="radio" name="q103" value="b"> b) Cosine Similarity.</label>
+                <label><input type="radio" name="q103" value="c"> c) Jaccard Similarity.</label>
+                <label><input type="radio" name="q103" value="d"> d) All of the above</label>
+            </div>
+            <div class="feedback"></div>
+        </div>
+
+        <div class="question-block" data-correct-answer="b">
+            <p class="question-text font-size-13pt">104. comparing the direction of two texts with </p>
+            <div class="options">
+                <label><input type="radio" name="q104" value="a"> a) Euclidean Distance.</label>
+                <label><input type="radio" name="q104" value="b"> b) Cosine Similarity.</label>
+                <label><input type="radio" name="q104" value="c"> c) Jaccard Similarity.</label>
+                <label><input type="radio" name="q104" value="d"> d) All of the above</label>
+            </div>
+            <div class="feedback"></div>
+        </div>
+
+        <div class="question-block" data-correct-answer="c">
+            <p class="question-text font-size-13pt">105. checking the overlap of two sets with </p>
+            <div class="options">
+                <label><input type="radio" name="q105" value="a"> a) Euclidean Distance.</label>
+                <label><input type="radio" name="q105" value="b"> b) Cosine Similarity.</label>
+                <label><input type="radio" name="q105" value="c"> c) Jaccard Similarity.</label>
+                <label><input type="radio" name="q105" value="d"> d) All of the above</label>
+            </div>
+            <div class="feedback"></div>
+        </div>
+
+        <div class="question-block" data-correct-answer="e">
+            <p class="question-text font-size-13pt">106. The applications of the similarity measures are </p>
+            <div class="options">
+                <label><input type="radio" name="q106" value="a"> a) Recommendation Systems</label>
+                <label><input type="radio" name="q106" value="b"> b) Search Engines</label>
+                <label><input type="radio" name="q106" value="c"> c) Clustering</label>
+                <label><input type="radio" name="q106" value="d"> d) Plagiarism Detection</label>
+                <label><input type="radio" name="q106" value="e"> e) All of the above</label>
+            </div>
+            <div class="feedback"></div>
+        </div>
+
+        <h3 class="section-title">Part II: Quiz (2)</h3>
+
+        <div class="question-block" data-correct-answer="c">
+            <p class="question-text font-size-13pt">1. Which feature is more likely to be removed during dimensionality reduction?</p>
+            <div class="options">
+                <label><input type="radio" name="q107" value="a"> a) High variance and independent</label>
+                <label><input type="radio" name="q107" value="b"> b) Any feature with missing values</label>
+                <label><input type="radio" name="q107" value="c"> c) Low variance and highly correlated with others</label>
+                <label><input type="radio" name="q107" value="d"> d) Randomly selected</label>
+            </div>
+            <div class="feedback"></div>
+        </div>
+
+        <div class="question-block" data-correct-answer="b">
+            <p class="question-text font-size-13pt">2. PCA is a <span class="red-text">supervised</span> machine learning algorithm.</p>
+            <div class="options">
+                <label><input type="radio" name="q108" value="a"> a) True</label>
+                <label><input type="radio" name="q108" value="b"> b) False</label>
+            </div>
+            <div class="feedback"></div>
+        </div>
+
+        <div class="question-block" data-correct-answer="a">
+            <p class="question-text font-size-13pt">3. If an eigenvalue is very small, what does it indicate?</p>
+            <div class="options">
+                <label><input type="radio" name="q109" value="a"> a) That direction explains very little variance</label>
+                <label><input type="radio" name="q109" value="b"> b) That feature must be selected</label>
+                <label><input type="radio" name="q109" value="c"> c) That direction explains most of the variance</label>
+                <label><input type="radio" name="q109" value="d"> d) Nothing specific</label>
+            </div>
+            <div class="feedback"></div>
+        </div>
+
+        <div class="question-block" data-correct-answer="c">
+            <p class="question-text font-size-13pt">4. How is the transformed data obtained in PCA?</p>
+            <div class="options">
+                <label><input type="radio" name="q110" value="a"> a) Dividing the data by the eigenvalues</label>
+                <label><input type="radio" name="q110" value="b"> b) Adding eigenvectors to the data</label>
+                <label><input type="radio" name="q110" value="c"> c) Multiplying the normalized data by the eigenvectors</label>
+                <label><input type="radio" name="q110" value="d"> d) Subtracting the covariance matrix from the data</label>
+            </div>
+            <div class="feedback"></div>
+        </div>
+
+        <div class="question-block" data-correct-answer="a">
+            <p class="question-text font-size-13pt">5. What do eigenvectors represent in PCA?</p>
+            <div class="options">
+                <label><input type="radio" name="q111" value="a"> a) Principal components or directions of maximum variance</label>
+                <label><input type="radio" name="q111" value="b"> b) Variance magnitude</label>
+                <label><input type="radio" name="q111" value="c"> c) Data centroids</label>
+                <label><input type="radio" name="q111" value="d"> d) Original feature values</label>
+            </div>
+            <div class="feedback"></div>
+        </div>
+
+        <div class="question-block" data-correct-answer="b">
+            <p class="question-text font-size-13pt">6. Skewness and correlation are example of transformational Feature.</p>
+            <div class="options">
+                <label><input type="radio" name="q112" value="a"> a) True</label>
+                <label><input type="radio" name="q112" value="b"> b) False</label>
+            </div>
+            <div class="feedback"></div>
+        </div>
+
+        <div class="question-block" data-correct-answer="a">
+            <p class="question-text font-size-13pt">7. Eigenvectors do not change direction when multiplied by a matrix.</p>
+            <div class="options">
+                <label><input type="radio" name="q113" value="a"> a) True</label>
+                <label><input type="radio" name="q113" value="b"> b) False</label>
+            </div>
+            <div class="feedback"></div>
+        </div>
+
+        <div class="question-block" data-correct-answer="a">
+            <p class="question-text font-size-13pt">8. After PCA, data is transformed into a new coordinate system.</p>
+            <div class="options">
+                <label><input type="radio" name="q114" value="a"> a) True</label>
+                <label><input type="radio" name="q114" value="b"> b) False</label>
+            </div>
+            <div class="feedback"></div>
+        </div>
+
+        <div class="question-block" data-correct-answer="b">
+            <p class="question-text font-size-13pt">9. Increasing the number of features will always improve performance.</p>
+            <div class="options">
+                <label><input type="radio" name="q115" value="a"> a) True</label>
+                <label><input type="radio" name="q115" value="b"> b) False</label>
+            </div>
+            <div class="feedback"></div>
+        </div>
+
+        <div class="question-block" data-correct-answer="d">
+            <p class="question-text font-size-13pt">10. In feature selection, the new feature space is:</p>
+            <div class="options">
+                <label><input type="radio" name="q116" value="a"> a) A projection to a completely new space</label>
+                <label><input type="radio" name="q116" value="b"> b) An expanded space</label>
+                <label><input type="radio" name="q116" value="c"> c) Randomly selected</label>
+                <label><input type="radio" name="q116" value="d"> d) A subset of the original feature space</label>
+            </div>
+            <div class="feedback"></div>
+        </div>
+
+        <div id="results">
+            Results: <span class="correct-count" id="correctCount">0</span> Correct / <span class="incorrect-count" id="incorrectCount">0</span> Incorrect
+        </div>
+    </div>
+
+    <script>
+        let correctAnswersCount = 0;
+        let incorrectAnswersCount = 0;
+        const answeredQuestions = new Set(); 
+
+        document.querySelectorAll('.question-block').forEach(block => {
+            const radios = block.querySelectorAll('input[type="radio"]');
+            const correctAnswer = block.dataset.correctAnswer;
+            const feedbackDiv = block.querySelector('.feedback');
+            if (radios.length === 0) return; 
+
+            const questionName = radios[0].name; 
+
+            radios.forEach(radio => {
+                radio.addEventListener('change', function() {
+                    const wasAnswered = answeredQuestions.has(questionName);
+                    
+                    if (this.value === correctAnswer) {
+                        if (!wasAnswered || (wasAnswered && feedbackDiv.classList.contains('incorrect'))) {
+                            correctAnswersCount++;
+                            if (wasAnswered) incorrectAnswersCount--; 
+                        }
+                        feedbackDiv.textContent = 'Correct! 🎉';
+                        feedbackDiv.className = 'feedback correct';
+                    } else {
+                        if (!wasAnswered || (wasAnswered && feedbackDiv.classList.contains('correct'))) {
+                            incorrectAnswersCount++;
+                            if (wasAnswered) correctAnswersCount--; 
+                        }
+                        feedbackDiv.textContent = 'Incorrect.'; 
+                        feedbackDiv.className = 'feedback incorrect';
+                    }
+                    
+                    if (!wasAnswered) {
+                        answeredQuestions.add(questionName); 
+                    }
+                    feedbackDiv.style.display = 'block';
+                    
+                    document.getElementById('correctCount').textContent = correctAnswersCount;
+                    document.getElementById('incorrectCount').textContent = incorrectAnswersCount;
+                });
+            });
+        });
+    </script>
+</body>
+</html>
